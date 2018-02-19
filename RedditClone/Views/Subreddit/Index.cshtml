@@ -6,18 +6,9 @@
 
 <h2>Subreddits</h2>
 
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    @for (var i = 0; i < Model.Subreddits.Count; i++)
-    {
-        <tr>
-            <td>@Model.Subreddits[i].SubredditName</td>
-        </tr>
-    }
-    </tbody>
-</table>
+<ul>
+@for (var i = 0; i < Model.Subreddits.Count; i++)
+{
+    <h4>@Html.ActionLink(Model.Subreddits[i].SubredditName, "SubredditPosts", new { id = Model.Subreddits[i].SubredditId })</h4>
+}
+</ul>
