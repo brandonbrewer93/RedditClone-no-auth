@@ -1,0 +1,23 @@
+﻿@model RedditClone.Models.SubredditListViewModel
+
+@{
+    ViewBag.Title = "Subreddits";
+}
+
+<h2>Subreddits</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for (var i = 0; i < Model.Subreddits.Count; i++)
+    {
+        <tr>
+            <td>@Model.Subreddits[i].SubredditName</td>
+        </tr>
+    }
+    </tbody>
+</table>
