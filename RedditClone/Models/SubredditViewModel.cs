@@ -9,5 +9,6 @@ namespace RedditClone.Models
     {
         public int? SubredditId { get; set; }
         public string SubredditName { get; set; }
+        public string[] Posts { get; set; }
     }
 }
