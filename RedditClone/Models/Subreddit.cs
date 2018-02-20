@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RedditClone.Models
 {
-    public class SubredditViewModel
+    public class Subreddit
     {
         public int SubredditId { get; set; }
         public string SubredditName { get; set; }

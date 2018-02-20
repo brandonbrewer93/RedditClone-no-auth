@@ -10,58 +10,40 @@ namespace RedditClone.Controllers
 {
     public class SubredditController : Controller
     {
-        private List<SubredditViewModel> _subredditList { get; }
-
-        public SubredditController()
-        {
-            _subredditList = new List<SubredditViewModel>
-            {
-                new SubredditViewModel {SubredditId = 1, SubredditName = "Music", Posts = new []{"Test 1", "Test 2"}},
-                new SubredditViewModel {SubredditId = 2, SubredditName = "Gaming", Posts = new []{"Test 1", "Test 2"}},
-                new SubredditViewModel {SubredditId = 3, SubredditName = "Movies", Posts = new []{"Test 1", "Test 2"}},
-                new SubredditViewModel {SubredditId = 4, SubredditName = "Art", Posts = new []{"Test 1", "Test 2"}},
-                new SubredditViewModel {SubredditId = 5, SubredditName = "Funny", Posts = new []{"Test 1", "Test 2"}},
-                new SubredditViewModel {SubredditId = 6, SubredditName = "News", Posts = new []{"Test 1", "Test 2"}},
-                new SubredditViewModel {SubredditId = 7, SubredditName = "Science", Posts = new []{"Test 1", "Test 2"}}
-            };
-        }
-
         // GET: Subreddit
         public ActionResult Index()
         {
-            var subredditList = new SubredditListViewModel
+            using (var subredditContext = new RedditCloneContext())
             {
-                Subreddits = _subredditList
-            };
-
-            return View(subredditList);
+                var subredditList = new SubredditListViewModel
+                {
+                    Subreddits = subredditContext.Subreddits.Select(s => new SubredditViewModel
+                    {
+                        SubredditId = s.SubredditId,
+                        SubredditName = s.SubredditName
+                    }).ToList()
+                };
+                return View(subredditList);
+            }
         }
 
-        public SubredditViewModel GetSubreddit(int id)
+        public ActionResult SubredditPosts(int id)
         {
-            SubredditViewModel subredditToReturn = null;
-
-            foreach (var subreddit in _subredditList)
+            using (var redditCloneContext = new RedditCloneContext())
             {
-                if (subreddit.SubredditId == id)
+                var subreddit = redditCloneContext.Subreddits.SingleOrDefault(s => s.SubredditId == id);
+                if (subreddit != null)
                 {
-                    subredditToReturn = subreddit;
+                    var subredditViewModel = new SubredditViewModel
+                    {
+                        SubredditId = subreddit.SubredditId,
+                        SubredditName = subreddit.SubredditName
+                    };
+
+                    return View(subredditViewModel);
                 }
             }
-
-            return subredditToReturn;
-        }
-
-        public ActionResult SubredditPosts(int? id)
-        {
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-
-            var subreddit = GetSubreddit(id.Value);
-
-            return View(subreddit);
+            return new HttpNotFoundResult();
         }
     }
 }
