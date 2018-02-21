@@ -4,11 +4,21 @@
     ViewBag.Title = "Subreddits";
 }
 
-<h2>Subreddits</h2>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">RedditClone</h1>
+        <p>A community for discussing all of your favorite things.</p>
+        <hr class="my-4">
+        <p>If we dont have a subreddit that interests you, create a new one!</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">New Subreddit</a>
+        </p>
+    </div>
+</div>
 
-<ul>
-@for (var i = 0; i < Model.Subreddits.Count; i++)
-{
-    <h4>@Html.ActionLink(Model.Subreddits[i].SubredditName, "SubredditPosts", new { id = Model.Subreddits[i].SubredditId })</h4>
-}
-</ul>
+<div class="list-group">
+    @for (var i = 0; i < Model.Subreddits.Count; i++)
+    {
+        <h4>@Html.ActionLink(Model.Subreddits[i].SubredditName, "SubredditPosts", new { id = Model.Subreddits[i].SubredditId }, new { @class="list-group-item list-group-item-action" })</h4>
+    }
+</div>
