@@ -5,4 +5,12 @@
 }
 
 <h2>@Model.SubredditName</h2>
+<h1>@Model.Posts.Count</h1>
+
+<ul>
+    @foreach (var post in Model.Posts)
+    {
+        <li>@post.Title</li>
+    }
+</ul>
 

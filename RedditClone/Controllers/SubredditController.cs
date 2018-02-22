@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
@@ -27,23 +29,46 @@ namespace RedditClone.Controllers
             }
         }
 
+        //public ActionResult SubredditPosts(int id)
+        //{
+        //    using (var redditCloneContext = new RedditCloneContext())
+        //    {
+        //        var subreddit = redditCloneContext.Subreddits.Include(s => s.Posts).SingleOrDefault(s => s.SubredditId == id);
+        //        if (subreddit != null)
+        //        {
+        //            var subredditViewModel = new SubredditViewModel
+        //            {
+        //                SubredditId = subreddit.SubredditId,
+        //                SubredditName = subreddit.SubredditName,
+        //                Posts = subreddit.Posts
+        //            };
+
+        //            return View(subredditViewModel);
+        //        }
+        //    }
+        //    return new HttpNotFoundResult();
+        //}
+
+
+
         public ActionResult SubredditPosts(int id)
         {
             using (var redditCloneContext = new RedditCloneContext())
             {
-                var subreddit = redditCloneContext.Subreddits.SingleOrDefault(s => s.SubredditId == id);
-                if (subreddit != null)
+                var subreddit = redditCloneContext.Subreddits.Select(s => new SubredditViewModel
                 {
-                    var subredditViewModel = new SubredditViewModel
-                    {
-                        SubredditId = subreddit.SubredditId,
-                        SubredditName = subreddit.SubredditName
-                    };
+                    SubredditId = s.SubredditId,
+                    SubredditName = s.SubredditName,
+                    Posts = s.Posts
+                }).SingleOrDefault(s => s.SubredditId == id);
 
-                    return View(subredditViewModel);
+                if (subreddit == null)
+                {
+                    return new HttpNotFoundResult();
                 }
+
+                return View(subreddit);
             }
-            return new HttpNotFoundResult();
         }
     }
 }

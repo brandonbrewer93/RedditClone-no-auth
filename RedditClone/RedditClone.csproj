@@ -139,7 +139,18 @@
     <Compile Include="Migrations\201802200157027_InitialMigration.Designer.cs">
       <DependentUpon>201802200157027_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802210102080_AddPostModel.cs" />
+    <Compile Include="Migrations\201802210102080_AddPostModel.Designer.cs">
+      <DependentUpon>201802210102080_AddPostModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802210241433_AddPostListToSubredditEntity.cs" />
+    <Compile Include="Migrations\201802210241433_AddPostListToSubredditEntity.Designer.cs">
+      <DependentUpon>201802210241433_AddPostListToSubredditEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostListViewModel.cs" />
+    <Compile Include="Models\PostViewModel.cs" />
     <Compile Include="Models\Subreddit.cs" />
     <Compile Include="Models\SubredditListViewModel.cs" />
     <Compile Include="Models\SubredditViewModel.cs" />
@@ -152,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802200157027_InitialMigration.resx">
       <DependentUpon>201802200157027_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802210102080_AddPostModel.resx">
+      <DependentUpon>201802210102080_AddPostModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802210241433_AddPostListToSubredditEntity.resx">
+      <DependentUpon>201802210241433_AddPostListToSubredditEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
