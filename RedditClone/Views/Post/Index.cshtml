@@ -6,6 +6,10 @@
 
 <div class="jumbotron">
     <h2>@Model.Title</h2>
-    <span class="d-block text-right mb-5 font-italic">@Model.Date</span>
-    <p>@Model.Body</p>
+    <span class="d-block text-right font-italic">@Model.Date</span>
+    @if ( Model.ImageLink != null )
+    {
+        <img src="@Model.ImageLink" class="img-fluid rounded d-block w-100 mx-auto mt-5 mb-5" />
+    }
+    <p class="mt-5">@Model.Body</p>
 </div>

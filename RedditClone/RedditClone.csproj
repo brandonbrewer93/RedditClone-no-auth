@@ -149,6 +149,10 @@
     <Compile Include="Migrations\201802210241433_AddPostListToSubredditEntity.Designer.cs">
       <DependentUpon>201802210241433_AddPostListToSubredditEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802230203490_AddImageLinkToPostModel.cs" />
+    <Compile Include="Migrations\201802230203490_AddImageLinkToPostModel.Designer.cs">
+      <DependentUpon>201802230203490_AddImageLinkToPostModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostListViewModel.cs" />
@@ -171,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802210241433_AddPostListToSubredditEntity.resx">
       <DependentUpon>201802210241433_AddPostListToSubredditEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802230203490_AddImageLinkToPostModel.resx">
+      <DependentUpon>201802230203490_AddImageLinkToPostModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

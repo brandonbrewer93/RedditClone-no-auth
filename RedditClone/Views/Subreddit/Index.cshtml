@@ -19,9 +19,6 @@
 <div class="list-group">
     @for (var i = 0; i < Model.Subreddits.Count; i++)
     {
-        @*<h4>@Html.ActionLink(Model.Subreddits[i].SubredditName, "SubredditPosts", new { id = Model.Subreddits[i].SubredditId }, new { @class="list-group-item list-group-item-action" })</h4>*@
-        
-
         <a href="@Url.Action("SubredditPosts", new { id = Model.Subreddits[i].SubredditId })"
            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             <h4>@Model.Subreddits[i].SubredditName</h4>

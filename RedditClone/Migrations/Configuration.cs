@@ -37,6 +37,7 @@ namespace RedditClone.Migrations
                     SubredditId = 1,
                     Title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin laoreet purus, congue feugiat dolor finibus eu. Pellentesque gravida est at magna cursus congue. Vestibulum feugiat nulla ut ullamcorper venenatis. Ut molestie sagittis lacus, ut maximus enim maximus eget. Etiam ornare consequat enim, id tempus ligula ultrices eget. Vestibulum sed convallis nisl, vitae interdum nulla. Duis quis ligula nec risus sagittis condimentum vel ac nunc. Donec dui augue, pretium sollicitudin leo quis, molestie iaculis massa. Mauris condimentum orci blandit dui ullamcorper, dictum maximus urna accumsan. Donec porta fringilla mattis. Nullam sed ipsum sollicitudin eros maximus faucibus a ut ligula. Suspendisse potenti. Maecenas sed mattis velit, ut rhoncus nulla. Nulla vitae orci accumsan, dapibus ex sed, ultricies leo. Suspendisse feugiat, eros molestie vulputate rhoncus, arcu ante molestie lectus, ut auctor turpis ex vitae lectus.",
+                    ImageLink = "https://images.unsplash.com/photo-1442508748335-fde9c3f58fd9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=efb6133a444ebb07753d8fa38eb6d2f6&auto=format&fit=crop&w=500&q=60",
                     Date = DateTime.Now
                 },
                 new Post
@@ -45,6 +46,7 @@ namespace RedditClone.Migrations
                     SubredditId = 1,
                     Title = "Test 2",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin laoreet purus, congue feugiat dolor finibus eu. Pellentesque gravida est at magna cursus congue. Vestibulum feugiat nulla ut ullamcorper venenatis. Ut molestie sagittis lacus, ut maximus enim maximus eget. Etiam ornare consequat enim, id tempus ligula ultrices eget. Vestibulum sed convallis nisl, vitae interdum nulla. Duis quis ligula nec risus sagittis condimentum vel ac nunc. Donec dui augue, pretium sollicitudin leo quis, molestie iaculis massa. Mauris condimentum orci blandit dui ullamcorper, dictum maximus urna accumsan. Donec porta fringilla mattis. Nullam sed ipsum sollicitudin eros maximus faucibus a ut ligula. Suspendisse potenti. Maecenas sed mattis velit, ut rhoncus nulla. Nulla vitae orci accumsan, dapibus ex sed, ultricies leo. Suspendisse feugiat, eros molestie vulputate rhoncus, arcu ante molestie lectus, ut auctor turpis ex vitae lectus.",
+                    ImageLink = "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bbe0bd1ecfaaa91394e0c9effb8b0415&auto=format&fit=crop&w=500&q=60",
                     Date = DateTime.Now
                 },
                 new Post
@@ -53,6 +55,7 @@ namespace RedditClone.Migrations
                     SubredditId = 1,
                     Title = "Test 3",
                     Body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin laoreet purus, congue feugiat dolor finibus eu. Pellentesque gravida est at magna cursus congue. Vestibulum feugiat nulla ut ullamcorper venenatis. Ut molestie sagittis lacus, ut maximus enim maximus eget. Etiam ornare consequat enim, id tempus ligula ultrices eget. Vestibulum sed convallis nisl, vitae interdum nulla. Duis quis ligula nec risus sagittis condimentum vel ac nunc. Donec dui augue, pretium sollicitudin leo quis, molestie iaculis massa. Mauris condimentum orci blandit dui ullamcorper, dictum maximus urna accumsan. Donec porta fringilla mattis. Nullam sed ipsum sollicitudin eros maximus faucibus a ut ligula. Suspendisse potenti. Maecenas sed mattis velit, ut rhoncus nulla. Nulla vitae orci accumsan, dapibus ex sed, ultricies leo. Suspendisse feugiat, eros molestie vulputate rhoncus, arcu ante molestie lectus, ut auctor turpis ex vitae lectus.",
+                    ImageLink = "https://i.imgur.com/Fr6xeWv.gif",
                     Date = DateTime.Now
                 },
                 new Post

@@ -20,6 +20,7 @@ namespace RedditClone.Controllers
                     PostId = p.PostId,
                     Title = p.Title,
                     Body = p.Body,
+                    ImageLink = p.ImageLink,
                     Date = p.Date
                 }).SingleOrDefault(p => p.PostId == id);
 
