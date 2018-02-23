@@ -22,7 +22,8 @@ namespace RedditClone.Controllers
                     Subreddits = subredditContext.Subreddits.Select(s => new SubredditViewModel
                     {
                         SubredditId = s.SubredditId,
-                        SubredditName = s.SubredditName
+                        SubredditName = s.SubredditName,
+                        Posts = s.Posts
                     }).ToList()
                 };
                 return View(subredditList);
@@ -55,6 +56,8 @@ namespace RedditClone.Controllers
         {
             using (var redditCloneContext = new RedditCloneContext())
             {
+                int maxLength = 5;
+
                 var subreddit = redditCloneContext.Subreddits.Select(s => new SubredditViewModel
                 {
                     SubredditId = s.SubredditId,

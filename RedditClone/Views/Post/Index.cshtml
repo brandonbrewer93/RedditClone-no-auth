@@ -1,0 +1,11 @@
+﻿@model RedditClone.Models.PostViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h2>@Model.Title</h2>
+    <span class="d-block text-right mb-5 font-italic">@Model.Date</span>
+    <p>@Model.Body</p>
+</div>

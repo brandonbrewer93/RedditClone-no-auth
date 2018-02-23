@@ -4,13 +4,21 @@
     ViewBag.Title = Model.SubredditName;
 }
 
-<h2>@Model.SubredditName</h2>
-<h1>@Model.Posts.Count</h1>
+<div class="jumbotron">
+    <h1>
+        @Model.SubredditName
+    </h1>
+</div>
 
-<ul>
+<div class="list-group">
     @foreach (var post in Model.Posts)
     {
-        <li>@post.Title</li>
+        <a href="@Url.Action("Index", "Post", new {id = post.PostId})"
+           class="list-group-item list-group-item-action">
+            <h4 class="d-inline-block mb-4">@post.Title</h4>
+            <p>@post.Body.Substring(0, 75)...</p>
+            <span class="float-right font-italic">@post.Date</span>
+        </a>
     }
-</ul>
+</div>
 
