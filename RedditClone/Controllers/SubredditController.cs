@@ -52,7 +52,7 @@ namespace RedditClone.Controllers
 
 
 
-        public ActionResult SubredditPosts(int id)
+        public ActionResult Posts(int id)
         {
             using (var redditCloneContext = new RedditCloneContext())
             {
