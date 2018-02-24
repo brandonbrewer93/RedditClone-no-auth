@@ -11,5 +11,6 @@ namespace RedditClone
 
         public virtual DbSet<Subreddit> Subreddits { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
     }
 }

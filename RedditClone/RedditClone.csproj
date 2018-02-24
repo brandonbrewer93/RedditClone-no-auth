@@ -153,7 +153,13 @@
     <Compile Include="Migrations\201802230203490_AddImageLinkToPostModel.Designer.cs">
       <DependentUpon>201802230203490_AddImageLinkToPostModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802240250333_AddCommentModel.cs" />
+    <Compile Include="Migrations\201802240250333_AddCommentModel.Designer.cs">
+      <DependentUpon>201802240250333_AddCommentModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CommentViewModel.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\PostListViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802230203490_AddImageLinkToPostModel.resx">
       <DependentUpon>201802230203490_AddImageLinkToPostModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802240250333_AddCommentModel.resx">
+      <DependentUpon>201802240250333_AddCommentModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

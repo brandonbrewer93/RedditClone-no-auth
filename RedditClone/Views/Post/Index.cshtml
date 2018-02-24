@@ -13,3 +13,10 @@
     }
     <p class="mt-5">@Model.Body</p>
 </div>
+
+<div class="list-group">
+    @foreach (var comment in Model.Comments)
+    {
+        <h4 class="list-group-item">@comment.CommentBody</h4>
+    }
+</div>

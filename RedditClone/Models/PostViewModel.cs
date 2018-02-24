@@ -7,6 +7,11 @@ namespace RedditClone.Models
 {
     public class PostViewModel
     {
+        public PostViewModel()
+        {
+            Comments = new List<Comment>();
+        }
+
         public int? PostId { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
@@ -14,5 +19,7 @@ namespace RedditClone.Models
         public DateTime Date { get; set; }
 
         public SubredditViewModel SubredditViewModel { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
     }
 }

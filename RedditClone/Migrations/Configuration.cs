@@ -29,6 +29,14 @@ namespace RedditClone.Migrations
                 new Subreddit { SubredditId = 6, SubredditName = "Funny" }
             );
 
+            context.Comments.AddOrUpdate(
+                c => c.CommentId,
+                new Comment { CommentId = 1, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now},
+                new Comment { CommentId = 2, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 3, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 4, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now }
+            );
+
             context.Posts.AddOrUpdate(
                 p => p.PostId,
                 new Post
