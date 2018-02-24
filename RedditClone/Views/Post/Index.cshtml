@@ -12,11 +12,15 @@
         <img src="@Model.ImageLink" class="img-fluid rounded d-block w-100 mx-auto mt-5 mb-5" />
     }
     <p class="mt-5">@Model.Body</p>
+    @Html.ActionLink("Edit", "PostEdit", new { id= Model.PostId })
 </div>
 
 <div class="list-group">
     @foreach (var comment in Model.Comments)
     {
-        <h4 class="list-group-item">@comment.CommentBody</h4>
+        <div class="list-group-item">
+            <h6>@comment.CommentBody</h6>
+            <span class="d-block text-right font-italic">@comment.Date</span>
+        </div>
     }
 </div>

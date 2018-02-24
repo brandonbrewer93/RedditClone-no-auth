@@ -1,0 +1,37 @@
+﻿@model RedditClone.Models.PostViewModel
+
+@{
+    var isEditMode = Model.PostId != null;
+    ViewBag.Title = isEditMode ? "Edit " + Model.Title : "Add Post";
+}
+
+<h1>@(isEditMode ? "Edit Post" : "Add Post")</h1>
+
+<div class="container">
+    @using (Html.BeginForm(isEditMode ? "EditPost" : "AddPost", "Post"))
+    {
+        @Html.HiddenFor(m => m.PostId)
+        @Html.HiddenFor(m => m.SubredditId)
+        <div class="form-group">
+            @Html.LabelFor(m => m.Title)
+            @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        </div>
+        <div class ="form-group">
+            @Html.LabelFor(m => m.ImageLink)
+            @Html.TextBoxFor(m => m.ImageLink, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Body)
+            @Html.TextAreaFor(m => m.Body, new { @class = "form-control", rows = 20})
+        </div>
+        <button type="submit" class="btn btn-primary">@(isEditMode ? "Save" : "Add")</button>
+        if (isEditMode)
+        {
+            @Html.ActionLink("Cancel", "Index", new { id = Model.PostId }, new { @class = "btn btn-danger", role = "button" });
+        }
+        else
+        {
+            @Html.ActionLink("Cancel", "Index", "Subreddit", new { id = Model.SubredditId }, new { @class = "btn btn-danger", role = "button" });
+        }
+    }
+</div>

@@ -31,10 +31,38 @@ namespace RedditClone.Migrations
 
             context.Comments.AddOrUpdate(
                 c => c.CommentId,
-                new Comment { CommentId = 1, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now},
-                new Comment { CommentId = 2, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
-                new Comment { CommentId = 3, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
-                new Comment { CommentId = 4, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now }
+                new Comment { CommentId = 1, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now},
+                new Comment { CommentId = 2, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 3, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 4, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 5, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 6, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 7, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 8, PostId = 1, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 9, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 10, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 11, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 12, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fn lkjnl sakjd nlkaj dfnl kjasd fnll", Date = DateTime.Now },
+                new Comment { CommentId = 13, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 14, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 15, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 16, PostId = 2, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 17, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 18, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 19, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 20, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 21, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 22, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 23, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 24, PostId = 3, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 25, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 26, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 27, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 28, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 29, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 30, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 31, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now },
+                new Comment { CommentId = 32, PostId = 4, CommentBody = "lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl lkjnl sakjd nlkaj dfnl kjasd fnl", Date = DateTime.Now }
             );
 
             context.Posts.AddOrUpdate(

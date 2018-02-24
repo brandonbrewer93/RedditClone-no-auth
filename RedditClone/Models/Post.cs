@@ -21,7 +21,7 @@ namespace RedditClone.Models
         public int SubredditId { get; set; }
         public virtual Subreddit Subreddit { get; set; }
 
-        public int CommentId { get; set; }
+        public int? CommentId { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }
 }
