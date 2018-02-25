@@ -109,5 +109,26 @@ namespace RedditClone.Controllers
 
             return new HttpNotFoundResult();
         }
+
+        [HttpPost]
+        public ActionResult DeletePost(PostViewModel postViewModel)
+        {
+            int subredditId = postViewModel.SubredditId;
+
+            using (var redditCloneContext = new RedditCloneContext())
+            {
+                var post = redditCloneContext.Posts.SingleOrDefault(p => p.PostId == postViewModel.PostId);
+
+                if (post != null)
+                {
+                    redditCloneContext.Posts.Remove(post);
+                    redditCloneContext.SaveChanges();
+
+                    return RedirectToAction("Posts", "Subreddit", new { id = subredditId });
+                }
+
+                return new HttpNotFoundResult();
+            }
+        }
     }
 }

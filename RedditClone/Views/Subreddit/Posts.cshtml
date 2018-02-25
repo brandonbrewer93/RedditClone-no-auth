@@ -8,7 +8,7 @@
     <h1>
         @Model.SubredditName
     </h1>
-    @Html.ActionLink("Add Post", "PostAdd", "Post", new { id = Model.SubredditId}, null)
+    @Html.ActionLink("Add Post", "PostAdd", "Post", new { id = Model.SubredditId}, new { @class = "btn btn-primary btn-sm" })
 </div>
 
 <div class="list-group">
@@ -19,14 +19,7 @@
             <h4 class="d-inline-block mb-4">@post.Title</h4>
             @if (post.Body != null)
             {
-                if (post.Body.Length > 75)
-                {
-                    <p>@post.Body.Substring(0, 75)...</p>
-                }
-                else
-                {
-                    <p>@post.Body</p>
-                }
+                <p>@(post.Body.Length > 75 ? post.Body.Substring(0, 75) : post.Body)</p>
 
             }
             <span class="float-right font-italic">@post.Date</span>

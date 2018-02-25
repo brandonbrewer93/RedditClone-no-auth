@@ -1,6 +1,6 @@
-﻿@{
+﻿@*@{
     ViewBag.Title = "RedditClone";
-}
+}*@
 
 <!DOCTYPE html>
 
@@ -12,13 +12,13 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="#">RedditClone</a>
+        @Html.ActionLink("RedditClone", "Index", "Subreddit", null, new { @class = "navbar-brand" })
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                @Html.ActionLink("Home", "Index", "Subreddit", null, new { @class = "nav-item nav-link" })
                 <a class="nav-item nav-link" href="#">Login</a>
                 <a class="nav-item nav-link" href="#">Signup</a>
             </div>

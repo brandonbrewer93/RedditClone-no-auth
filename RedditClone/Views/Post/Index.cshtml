@@ -1,7 +1,7 @@
 ﻿@model RedditClone.Models.PostViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "RedditClone - " + Model.Title;
 }
 
 <div class="jumbotron">
@@ -9,10 +9,33 @@
     <span class="d-block text-right font-italic">@Model.Date</span>
     @if ( Model.ImageLink != null )
     {
-        <img src="@Model.ImageLink" class="img-fluid rounded d-block w-100 mx-auto mt-5 mb-5" />
+        <img src="@Model.ImageLink" class="img-fluid rounded d-block w-75 mx-auto mt-5 mb-5" />
     }
     <p class="mt-5">@Model.Body</p>
-    @Html.ActionLink("Edit", "PostEdit", new { id= Model.PostId })
+    @Html.ActionLink("Edit", "PostEdit", new { id= Model.PostId }, new { @class = "btn btn-warning btn-sm" })
+    <button type="button" data-toggle="modal" data-target="#deletePostModal" class="btn btn-danger btn-sm">Delete</button>
+    <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                @using (Html.BeginForm("DeletePost", "Post"))
+                {
+                    <input type="hidden" value="@Model.PostId" name="PostId" />
+                    <input type="hidden" value="@Model.SubredditId" name="SubredditId" />
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete @Model.Title</h4>
+                        <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete @Model.Title?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">Yes</button>
+                        <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="list-group">
