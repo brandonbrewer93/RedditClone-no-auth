@@ -30,25 +30,22 @@ namespace RedditClone.Controllers
             }
         }
 
-        //public ActionResult SubredditPosts(int id)
-        //{
-        //    using (var redditCloneContext = new RedditCloneContext())
-        //    {
-        //        var subreddit = redditCloneContext.Subreddits.Include(s => s.Posts).SingleOrDefault(s => s.SubredditId == id);
-        //        if (subreddit != null)
-        //        {
-        //            var subredditViewModel = new SubredditViewModel
-        //            {
-        //                SubredditId = subreddit.SubredditId,
-        //                SubredditName = subreddit.SubredditName,
-        //                Posts = subreddit.Posts
-        //            };
+        [HttpPost]
+        public ActionResult AddSubreddit(SubredditViewModel subredditViewModel)
+        {
+            using (var redditCloneContext = new RedditCloneContext())
+            {
+                var subreddit = new Subreddit
+                {
+                    SubredditName = subredditViewModel.SubredditName
+                };
 
-        //            return View(subredditViewModel);
-        //        }
-        //    }
-        //    return new HttpNotFoundResult();
-        //}
+                redditCloneContext.Subreddits.Add(subreddit);
+                redditCloneContext.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+        }
 
 
 

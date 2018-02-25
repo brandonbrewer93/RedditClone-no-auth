@@ -39,26 +39,26 @@ namespace RedditClone.Controllers
         public ActionResult PostAdd(int id)
         {
 
-            var newpostViewModel = new PostViewModel
+            var postViewModel = new PostViewModel
             {
                 SubredditId = id
             };
 
-            return View("AddEditPost", newpostViewModel);
+            return View("AddEditPost", postViewModel);
         }
 
         [HttpPost]
-        public ActionResult AddPost(PostViewModel newpostViewModel)
+        public ActionResult AddPost(PostViewModel postViewModel)
         {
             using (var redditCloneContext = new RedditCloneContext())
             {
                 var post = new Post
                 {
-                    Title = newpostViewModel.Title,
-                    Body = newpostViewModel.Body,
-                    ImageLink = newpostViewModel.ImageLink,
+                    Title = postViewModel.Title,
+                    Body = postViewModel.Body,
+                    ImageLink = postViewModel.ImageLink,
                     Date = DateTime.Now,
-                    SubredditId = newpostViewModel.SubredditId
+                    SubredditId = postViewModel.SubredditId
                 };
 
                 redditCloneContext.Posts.Add(post);
