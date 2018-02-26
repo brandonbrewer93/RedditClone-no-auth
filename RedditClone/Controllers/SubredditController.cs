@@ -30,6 +30,26 @@ namespace RedditClone.Controllers
             }
         }
 
+        public ActionResult Posts(int id)
+        {
+            using (var redditCloneContext = new RedditCloneContext())
+            {
+                var subreddit = redditCloneContext.Subreddits.Select(s => new SubredditViewModel
+                {
+                    SubredditId = s.SubredditId,
+                    SubredditName = s.SubredditName,
+                    Posts = s.Posts
+                }).SingleOrDefault(s => s.SubredditId == id);
+
+                if (subreddit == null)
+                {
+                    return new HttpNotFoundResult();
+                }
+
+                return View(subreddit);
+            }
+        }
+
         [HttpPost]
         public ActionResult AddSubreddit(SubredditViewModel subredditViewModel)
         {
@@ -47,27 +67,22 @@ namespace RedditClone.Controllers
             }
         }
 
-
-
-        public ActionResult Posts(int id)
+        [HttpPost]
+        public ActionResult DeleteSubreddit(SubredditViewModel subredditViewModel)
         {
             using (var redditCloneContext = new RedditCloneContext())
             {
-                int maxLength = 5;
+                var subreddit = redditCloneContext.Subreddits.SingleOrDefault(s => s.SubredditId == subredditViewModel.SubredditId);
 
-                var subreddit = redditCloneContext.Subreddits.Select(s => new SubredditViewModel
+                if (subreddit != null)
                 {
-                    SubredditId = s.SubredditId,
-                    SubredditName = s.SubredditName,
-                    Posts = s.Posts
-                }).SingleOrDefault(s => s.SubredditId == id);
+                    redditCloneContext.Subreddits.Remove(subreddit);
+                    redditCloneContext.SaveChanges();
 
-                if (subreddit == null)
-                {
-                    return new HttpNotFoundResult();
+                    return RedirectToAction("Index");
                 }
 
-                return View(subreddit);
+                return new HttpNotFoundResult();
             }
         }
     }
