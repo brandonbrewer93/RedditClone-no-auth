@@ -165,10 +165,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\CommentListViewModel.cs" />
-    <Compile Include="Models\CommentViewModel.cs" />
     <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\PostListViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
     <Compile Include="Models\Subreddit.cs" />
     <Compile Include="Models\SubredditListViewModel.cs" />
@@ -199,9 +196,7 @@
       <DependentUpon>201802241845052_MadeCommentIdInPostEntityNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Comment\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
