@@ -15,8 +15,11 @@
     <h1>
         @Model.SubredditName
     </h1>
-    @Html.ActionLink("Add Post", "PostAdd", "Post", new { id = Model.SubredditId}, new { @class = "btn btn-primary btn-sm" })
-    <button type="button" data-toggle="modal" data-target="#deleteSubredditModal" class="btn btn-danger btn-sm">Delete</button>
+    <hr class="my-4">
+    <div class="btn-toolbar d-flex justify-content-between">
+        @Html.ActionLink("Add Post", "PostAdd", "Post", new { id = Model.SubredditId}, new { @class = "btn btn-primary btn-sm" })
+        <button type="button" data-toggle="modal" data-target="#deleteSubredditModal" class="btn btn-danger btn-sm">Delete Subreddit</button>
+    </div>
     <div class="modal fade" id="deleteSubredditModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -24,14 +27,14 @@
                 {
                     <input type="hidden" value="@Model.SubredditId" name="SubredditId" />
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete @Model.SubredditName</h4>
+                        <h4 class="modal-title">Delete Subreddit</h4>
                         <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">&times;</button>
                     </div>
                     <div class="modal-body">
                         Are you sure you want to delete @Model.SubredditName?
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">Yes</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Yes</button>
                         <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Cancel</button>
                     </div>
                 }
@@ -57,12 +60,15 @@
             <h4 class="d-inline-block mb-4">@post.Title</h4>
             @if (post.Body != null)
             {
-                <p>@(post.Body.Length > 75 ? post.Body.Substring(0, 75) : post.Body)</p>
+                <p>@(post.Body.Length > 75 ? post.Body.Substring(0, 75) + "..." : post.Body)</p>
 
             }
-
-            <span class="badge badge-primary badge-pill float-left">@commentCount</span>
-            <span class="float-right font-italic">@post.Date</span>
+            <div class="d-flex justify-content-between">
+                <span class="badge badge-primary d-flex flex-column justify-content-around">
+                    <span>Comments <span class="badge badge-light badge-pill">@commentCount</span></span>
+                </span>
+                <span class="font-italic">@(post.Date.ToString("M") + " " + post.Date.ToString("t"))</span>
+            </div>
         </a>
     }
 </div>

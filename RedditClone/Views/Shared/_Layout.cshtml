@@ -1,7 +1,6 @@
-﻿@*@{
-    ViewBag.Title = "RedditClone";
-}*@
-
+﻿@using System.Collections.ObjectModel
+@using RedditClone
+@using RedditClone.Models
 <!DOCTYPE html>
 
 <html>
@@ -24,9 +23,36 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div>@RenderBody()</div>
+<div class="container-fluid">
+    <div class="row">
+        @if (ViewBag.Title != "Reddit Clone - All")
+        {
+            <div class="col order-md-first order-last text-center text-md-left">
+                <ul class="list-group list-group-flush">
+                    @using (var redditCloneContext = new RedditCloneContext())
+                    {
+                        var subredditList = new SubredditListViewModel
+                        {
+                            Subreddits = redditCloneContext.Subreddits.Select(s => new SubredditViewModel
+                            {
+                                SubredditId = s.SubredditId,
+                                SubredditName = s.SubredditName,
+                                Posts = s.Posts
+                            }).ToList()
+                        };
+                        foreach (var subreddit in subredditList.Subreddits)
+                        {
+                            <a href="@Url.Action("Detail", "Subreddit", new {id = subreddit.SubredditId})" class="list-group-item list-group-item-action">@subreddit.SubredditName</a>
+                        }
+                    }
+                </ul>
+            </div>
+        }
+        <div id="body-content" class="col-10 order-md-last order-first mx-auto mb-5">
+            <div>@RenderBody()</div>
+        </div>
     </div>
+</div>
 
     <footer class="text-center mt-5 mb-2">RedditClone &copy; @DateTime.Now.Year Brandon Brewer</footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
