@@ -124,7 +124,7 @@ namespace RedditClone.Controllers
                     redditCloneContext.Posts.Remove(post);
                     redditCloneContext.SaveChanges();
 
-                    return RedirectToAction("Posts", "Subreddit", new { id = subredditId });
+                    return RedirectToAction("Detail", "Subreddit", new { id = subredditId });
                 }
 
                 return new HttpNotFoundResult();

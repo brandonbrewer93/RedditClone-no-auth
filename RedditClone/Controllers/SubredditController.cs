@@ -30,7 +30,7 @@ namespace RedditClone.Controllers
             }
         }
 
-        public ActionResult Posts(int id)
+        public ActionResult Detail(int id)
         {
             using (var redditCloneContext = new RedditCloneContext())
             {
@@ -63,7 +63,7 @@ namespace RedditClone.Controllers
                 redditCloneContext.Subreddits.Add(subreddit);
                 redditCloneContext.SaveChanges();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Detail", new { id = subreddit.SubredditId });
             }
         }
 
