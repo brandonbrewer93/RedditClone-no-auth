@@ -3,7 +3,7 @@
 @model RedditClone.Models.SubredditViewModel
 
 @{
-    ViewBag.Title = Model.SubredditName;
+    ViewBag.Title = "RedditClone - " + Model.SubredditName;
     var comments = new List<Comment>();
     using (var redditCloneContext = new RedditCloneContext())
     {
@@ -52,7 +52,7 @@
             }
         }
 
-        <a href="@Url.Action("Index", "Post", new {id = post.PostId})"
+        <a href="@Url.Action("Detail", "Post", new {id = post.PostId})"
            class="list-group-item list-group-item-action">
             <h4 class="d-inline-block mb-4">@post.Title</h4>
             @if (post.Body != null)

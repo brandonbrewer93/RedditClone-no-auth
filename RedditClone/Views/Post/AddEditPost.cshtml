@@ -2,7 +2,7 @@
 
 @{
     var isEditMode = Model.PostId != null;
-    ViewBag.Title = isEditMode ? "Edit - " + Model.Title : "Add Post";
+    ViewBag.Title = "RedditClone - " + (isEditMode ? "Edit - " + Model.Title : "Add Post");
 }
 
 <h1>@(isEditMode ? "Edit Post" : "Add Post")</h1>
@@ -27,11 +27,11 @@
         <button type="submit" class="btn btn-primary btn-sm">@(isEditMode ? "Save" : "Add")</button>
         if (isEditMode)
         {
-            @Html.ActionLink("Cancel", "Index", new { id = Model.PostId }, new { @class = "btn btn-danger btn-sm", role = "button" });
+            @Html.ActionLink("Cancel", "Detail", new { id = Model.PostId }, new { @class = "btn btn-danger btn-sm", role = "button" });
         }
         else
         {
-            @Html.ActionLink("Cancel", "Index", "Subreddit", new { id = Model.SubredditId }, new { @class = "btn btn-light btn-sm", role = "button" });
+            @Html.ActionLink("Cancel", "Detail", "Subreddit", new { id = Model.SubredditId }, new { @class = "btn btn-light btn-sm", role = "button" });
         }
     }
 </div>

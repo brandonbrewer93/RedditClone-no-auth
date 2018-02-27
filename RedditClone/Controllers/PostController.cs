@@ -12,7 +12,7 @@ namespace RedditClone.Controllers
     public class PostController : Controller
     {
         // GET: Post
-        public ActionResult Index(int id)
+        public ActionResult Detail(int id)
         {
             using (var redditCloneContext = new RedditCloneContext())
             {
@@ -64,7 +64,7 @@ namespace RedditClone.Controllers
                 redditCloneContext.Posts.Add(post);
                 redditCloneContext.SaveChanges();
 
-                return RedirectToAction("Index", new { id = post.PostId });
+                return RedirectToAction("Detail", new { id = post.PostId });
             }
         }
 
@@ -103,7 +103,7 @@ namespace RedditClone.Controllers
                     post.ImageLink = postViewModel.ImageLink;
                     redditCloneContext.SaveChanges();
 
-                    return RedirectToAction("Index", new {id = postViewModel.PostId});
+                    return RedirectToAction("Detail", new {id = postViewModel.PostId});
                 }
             }
 

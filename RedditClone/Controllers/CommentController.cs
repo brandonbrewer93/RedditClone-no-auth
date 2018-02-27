@@ -28,7 +28,7 @@ namespace RedditClone.Controllers
                 redditCloneContext.Comments.Add(comment);
                 redditCloneContext.SaveChanges();
 
-                return RedirectToAction("Index", "Post", new { id = postId });
+                return RedirectToAction("Detail", "Post", new { id = postId });
             }
         }
 
@@ -46,7 +46,7 @@ namespace RedditClone.Controllers
                     comment.CommentBody = currentComment.CommentBody;
                     redditCloneContext.SaveChanges();
 
-                    return RedirectToAction("Index", "Post", new {id = postId});
+                    return RedirectToAction("Detail", "Post", new {id = postId});
                 }
             }
 
