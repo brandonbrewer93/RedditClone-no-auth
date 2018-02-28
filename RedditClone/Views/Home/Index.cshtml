@@ -3,4 +3,7 @@
     ViewBag.Title = "RedditClone";
 }
 
-@Html.ActionLink("View All Subreddits", "Index", "Subreddit", null, new { @class = "btn btn-primary btn-block btn-sm" })
+<!--Inline-styling will be removed when custom CSS is added-->
+<div class="mx-auto" style="max-width: 500px">
+    @Html.ActionLink("View All Subreddits", "Index", "Subreddit", null, new { @class = "btn btn-primary btn-block btn-sm" })
+</div>
