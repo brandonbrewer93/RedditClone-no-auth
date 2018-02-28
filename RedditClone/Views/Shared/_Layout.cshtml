@@ -25,7 +25,7 @@
     </nav>
 <div class="container-fluid">
     <div class="row">
-        @if (ViewBag.Title != "Reddit Clone - All")
+        @if (ViewBag.Title != "Reddit Clone - All" && ViewBag.Title != "RedditClone")
         {
             <div class="col order-md-first order-last text-center text-md-left">
                 <ul class="list-group list-group-flush">
@@ -42,7 +42,7 @@
                         };
                         foreach (var subreddit in subredditList.Subreddits)
                         {
-                            <a href="@Url.Action("Detail", "Subreddit", new {id = subreddit.SubredditId})" class="list-group-item list-group-item-action">@subreddit.SubredditName</a>
+                            <a href="@Url.Action("Detail", "Subreddit", new {id = subreddit.SubredditId})" class="p-2 list-group-item list-group-item-action @(Model.SubredditId == subreddit.SubredditId ? "list-group-item-secondary" : null)">@subreddit.SubredditName</a>
                         }
                     }
                 </ul>
