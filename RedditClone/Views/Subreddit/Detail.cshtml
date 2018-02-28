@@ -44,7 +44,7 @@
 </div>
 
 <div class="list-group">
-    @foreach (var post in Model.Posts)
+    @foreach (var post in Model.Posts.OrderByDescending(p => p.Date))
     {
         int commentCount = 0;
         foreach (var comment in comments)
@@ -67,7 +67,12 @@
                 <span class="badge badge-primary d-flex flex-column justify-content-around">
                     <span>Comments <span class="badge badge-light badge-pill">@commentCount</span></span>
                 </span>
-                <span class="font-italic">@(post.Date.ToString("M") + " " + post.Date.ToString("t"))</span>
+                
+                @{
+                    var age = DateTime.Now.Subtract(post.Date);
+                }
+
+                <span class="font-italic">@(age.TotalHours > 1 ? post.Date.ToString("M") + " " + post.Date.ToString("t") : "New!")</span>
             </div>
         </a>
     }
